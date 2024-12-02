@@ -9,7 +9,7 @@ import { AppContext } from '../../context/AppContext'
 const LeftSidebar = () => {
 
   const navigate = useNavigate();
-  const { userData, chatData } = useContext(AppContext);
+  const { userData, chatData, chatUser, setChatUser, setMessageID, messageId } = useContext(AppContext);
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
 
@@ -75,9 +75,14 @@ const LeftSidebar = () => {
         })
       })
     } catch (error) {
-      // toast.error(error.message);
-      // console.log(error)
+      toast.error(error.message);
+      console.log(error)
     }
+  }
+
+  const setChat = async (item) =>{
+    setMessageID(item.messageId);
+    setChatUser(item);
   }
 
 
@@ -108,7 +113,7 @@ const LeftSidebar = () => {
           </div>
           : (chatData && Array.isArray(chatData)) 
             ? chatData.map((item, index) => (
-              <div key={index} className="friends">
+              <div onClick={()=>setChat(item)} key={index} className="friends">
                 <img src={item.userData.avatar} alt="" />
                 <div>
                   <p>{item.userData.name}</p>
