@@ -24,7 +24,7 @@ const ChatBox = () => {
           })
         })
   
-        const userIDs = [chatUser.rid,userData.id];
+        const userIDs = [chatUser.rId,userData.id];
   
         userIDs.forEach(async (id) => {
           const userChatsRef = doc(db,'chats',id);
