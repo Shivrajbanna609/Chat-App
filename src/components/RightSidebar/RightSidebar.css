@@ -25,10 +25,10 @@
     font-weight: 300;
 }
 
-.rs hr{
+/* .rs hr{
     border-color: #ffffff50;
     margin: 15px 0px;
-}
+} */
 
 .rs-media{
     padding: 0px 20px;
@@ -63,4 +63,10 @@
     padding: 10px 65px;
     border-radius: 20px;
     cursor: pointer;
+}
+
+@media (max-width:900px){
+    .rs{
+        display: none;
+    }
 }

@@ -9,7 +9,7 @@ import { AppContext } from '../../context/AppContext'
 const LeftSidebar = () => {
 
   const navigate = useNavigate();
-  const { userData, chatData, chatUser, setChatUser, setMessagesId, messagesId } = useContext(AppContext);
+  const { userData, chatData, chatUser, setChatUser, setMessagesId, messagesId, chatVisible, setChatVisible } = useContext(AppContext);
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
 
@@ -83,11 +83,12 @@ const LeftSidebar = () => {
   const setChat = async (item) =>{
     setMessagesId(item.messageId);
     setChatUser(item);
+    setChatVisible(true);
   }
 
 
   return (
-    <div className='ls'>
+    <div className={`ls ${chatVisible? "hidden" : ""}`}>
       <div className="ls-top">
         <div className="ls-nav">
           <img src={assets.logo} className='logo' alt="" />
