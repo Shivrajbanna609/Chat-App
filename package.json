@@ -2,7 +2,7 @@
   "name": "chat-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Shivrajbanna609.github.io/Chat-App",
+  "homepage": "https://shivrajbanna609.github.io/Chat-App",
   "type": "module",
   "scripts": {
     "dev": "vite",
